@@ -1,5 +1,5 @@
-const express =require("express");
-const rotas= require("./rotas"); 
+import express from "express";
+import  rotas  from "./rotas"; 
 class App{
  constructor(){
     this.server=express();
@@ -17,4 +17,4 @@ class App{
 
 }
 
-module.exports =new App().server;
+export default new App().server;

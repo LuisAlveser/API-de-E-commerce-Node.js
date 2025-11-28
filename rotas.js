@@ -1,9 +1,15 @@
 //Arquivo de todas as rotas da API
-const { Router }= require("express");
+import  { Router } from  "express";
 const rotas= new Router();
+import produto from "./controllers/ProdutoController";
 
-rotas.get("/",(req,res)=>{
-   return res.json({menssage:"Hello"});
-});
 
-module.exports=rotas;
+rotas.get("/produtos",produto.index);
+rotas.get("/produto/:id",produto.show);
+rotas.post("/produto",produto.create);
+rotas.delete("/produto/:id",produto.destroy);
+rotas.update("/produto/:id",produto.update);
+
+
+
+export default  rotas;
